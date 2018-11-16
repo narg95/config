@@ -1,9 +1,12 @@
 syntax on 
 set number
 set nocompatible              " be iMproved, required
-set mouse=a
+set mouse=nicr " To scroll and clic with mose. Note that selecting only in visual mode
+set clipboard=unnamed " To copy to clipboard using +y
 filetype off                  " required
 
+set ft=javascript
+let mapleader=","
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
@@ -12,11 +15,19 @@ call vundle#begin()
 
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'vim-airline/vim-airline-themes'
-Plugin 'bling/vim-airline'
-
+Plugin 'ctrlpvim/ctrlp.vim' "fuzzy file search with Cntrl+P
+Plugin 'airblade/vim-gitgutter' " Git integration
+Plugin 'morhetz/gruvbox' " Theme
+Plugin 'bling/vim-airline' "Status bar
+Plugin 'terryma/vim-multiple-cursors' " multiple cursors
+Plugin 'tpope/vim-surround' " Surround selected text with the given letter
+Plugin 'scrooloose/nerdtree' " Tree Navigation
+Plugin 'eugen0329/vim-esearch' " Search file and directories
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
+colorscheme gruvbox " Colorscheme for gruvbox
+
+map <C-o> :NERDTreeToggle<CR>
+"autocmd VimEnter * NERDTree "Open by default NERDTree
+nmap ,n :NERDTreeFind<CR>
