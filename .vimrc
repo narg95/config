@@ -6,7 +6,7 @@ set clipboard=unnamed " To copy to clipboard using +y
 filetype off                  " required
 
 set ft=javascript
-let mapleader=","
+let mapleader="."
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
